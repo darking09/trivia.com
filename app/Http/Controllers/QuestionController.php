@@ -19,8 +19,9 @@ class QuestionController extends Controller
     public function index()
     {
     	$myQuestion = new Question();
-
-        return view('welcome')->with('question', $myQuestion->all());
+        $quizAll =  $myQuestion->all()->toArray();
+        shuffle($quizAll);
+        return view('welcome')->with('question', $quizAll);
     }
 
     public function question(Request $request)
