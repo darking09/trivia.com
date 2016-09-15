@@ -22,7 +22,9 @@
                 <div class="panel-body">
                     <ul>
                         @foreach($question as $key => $value)
-                        <li data-id="{{$value['id']}}" class="question">{{$key + 1}}</li>
+                        <li data-id="{{$value['id']}}" class="question" data-title="{{ $key + 1 }}">
+                            <img src="img/star.png">
+                        </li>
                         @endforeach
                     </ul>
                 </div>
